@@ -49,8 +49,8 @@ Follow these instructions to set up and run the PoliceConnect project on your lo
 
 
 6. Future Enhancements
-    Implement additional services such as requesting police reports or scheduling appointments.
-    Enhance the user interface and user experience for improved accessibility.
-    Integrate real-time chat support for users seeking assistance.
-    Provide analytics and reports for law enforcement agencies.
+    a. Implement additional services such as requesting police reports or scheduling appointments.
+    b. Enhance the user interface and user experience for improved accessibility.
+    c. Integrate real-time chat support for users seeking assistance.
+    d. Provide analytics and reports for law enforcement agencies.
 
