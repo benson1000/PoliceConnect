@@ -21,7 +21,7 @@ Follow these instructions to set up and run the PoliceConnect project on your lo
 
 - Ruby (version 3.2.2)
 - Ruby on Rails (version 6.1.7.4)
-- PostgreSQL or other preferred database system
+- PostgreSQL
 
 ### Installation
 
@@ -33,15 +33,16 @@ Follow these instructions to set up and run the PoliceConnect project on your lo
 
 
 2. Install Dependencies
-
+    ```bash
     bundle install
 
 3. Create and migrate the database
-
+    ```bash
     rails db:create
     rails db:migrate
 
 4. Start the Rails server
+    ```bash
     rails s
 
 5. Open your web browser and navigate to http://localhost:3000 to access the application.
