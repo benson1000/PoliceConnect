@@ -30,6 +30,8 @@ gem 'sassc-rails', '>= 2.1.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'popper_js', '~> 2.11.8'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <section class="ftco-section">
   <div class="wrap">
     <div class="container">
@@ -29,7 +31,16 @@
             PoliceConnect
           <% end %>
           <ul class="navbar-nav navbar-right m-auto">
-            <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/about" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Background</a>
+                <a class="dropdown-item" href="#">Mission, Vision & core values</a>
+                <a class="dropdown-item" href="#">Mandate & Function</a>
+                <a class="dropdown-item" href="#">Our Perspective on Crime</a>
+              </div>
+            </li>
+
             <li class="nav-item"><%= link_to "Contact", contact_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Sign in", "#", method: :get, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Sign up", "#", method: :get, class: "nav-link" %></li>
