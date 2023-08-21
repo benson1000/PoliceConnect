@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'devise'
+
 #font-awesome-rails provides the Font-Awesome web fonts and stylesheets
 gem "font-awesome-rails"
 
