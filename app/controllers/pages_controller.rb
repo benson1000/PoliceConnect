@@ -5,10 +5,7 @@ class PagesController < ApplicationController
     def about
         #about page
     end
-    def contact
-        #contact page
-    end
-
+  
     def background
         #about/background page
     end

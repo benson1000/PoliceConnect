@@ -2,3 +2,5 @@
 //= link_directory ../stylesheets .css
 
 //= link main.js
+
+//= link flash.js
