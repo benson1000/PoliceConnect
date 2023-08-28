@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="display-4"><strong style="color: blue;">Contact Address</strong></h3>
+            <hr style="color: red;">
+            <p class="lead" style="font-size: 17px;">The Director,</p>
+            <p class="lead" style="font-size: 17px;">PoliceConnect,</p>
+            <p class="lead" style="font-size: 17px;">ACK Garden Annex – Ground Floor,</p>
+            <p class="lead" style="font-size: 17px;">1st Ngong Avenue, Off Bishop’s Road,</p>
+            <p class="lead" style="font-size: 17px;">P.O. Box 280-00100, Nairobi</p>
+            <p class="lead" style="font-size: 17px;">Tel:  +(254) 712345678</p>
+            <p class="lead" style="font-size: 17px;">Email: <a>info@policeConnect.com</a></p>
+        </div>
+        <div class="col-md-6">
+            <h3 class="display-4"><strong style="color: blue;">Enquiries / Feedback</strong></h3>
+            <hr>
+            <div class="well">
+            <%= form_for @contact,  validate: true do |f| %>
+            <div class="form-group">
+                <%= f.label :name, "your Name" %>
+                <%= f.text_field :name, class: "form-control" , validate: { presence: true } %>
+            </div>
+            <div class="form-group">
+                <%= f.label :email, "your Email" %>
+                <%= f.text_field :email, class: "form-control", validate: { presence: true } %>
+            </div>
+            <div class="form-group">
+                <%= f.label :subject, "Subject" %>
+                <%= f.text_field :subject, class: "form-control", validate: { presence: true } %>
+            </div>
+            <div class="form-group">
+                <%= f.label :message, "Your Message" %>
+                <%= f.text_area :message, class: "form-control", validate: { presence: true } %>
+            </div>
+            <%= f.submit "submit", class: "btn btn-primary" %>
+            <% end%>
+        </div>
+    </div>
+</div>
