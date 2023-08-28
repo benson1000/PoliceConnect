@@ -34,6 +34,14 @@ gem 'sassc-rails', '>= 2.1.0'
 
 gem 'popper_js', '~> 2.11.8'
 
+gem 'jquery-rails', '~> 4.3'
+
+#this gem allows you to validate form input in the user's browser before the form is even submitted, providing instant feedback and improving user experience.
+gem 'client_side_validations'
+
+#simplifies the management of JavaScript dependencies
+gem 'importmap-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

@@ -15,21 +15,21 @@
             <h3 class="display-4"><strong style="color: blue;">Enquiries / Feedback</strong></h3>
             <hr>
             <div class="well">
-            <%= form_for @contact,  validate: true do |f| %>
+            <%= form_for @contact, validate: true do |f| %>
             <div class="form-group">
-                <%= f.label :name, "your Name" %>
+                <%= f.label :name %>
                 <%= f.text_field :name, class: "form-control" , validate: { presence: true } %>
             </div>
             <div class="form-group">
-                <%= f.label :email, "your Email" %>
+                <%= f.label :email %>
                 <%= f.text_field :email, class: "form-control", validate: { presence: true } %>
             </div>
             <div class="form-group">
-                <%= f.label :subject, "Subject" %>
+                <%= f.label :subject %>
                 <%= f.text_field :subject, class: "form-control", validate: { presence: true } %>
             </div>
             <div class="form-group">
-                <%= f.label :message, "Your Message" %>
+                <%= f.label :message %>
                 <%= f.text_area :message, class: "form-control", validate: { presence: true } %>
             </div>
             <%= f.submit "submit", class: "btn btn-primary" %>
