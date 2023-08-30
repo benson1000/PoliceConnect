@@ -26,6 +26,11 @@
 	      <span class="fa fa-bars"></span> Menu
 	    </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to "Dashboard", dashboard_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Profile", profile_path, class: "nav-link" %></li>
+          <%= button_to "Log out", destroy_user_session_path, class: 'btn btn-primary navbar-btn', method: :delete %>
+        <% else %>
           <%= link_to root_path, class: 'navbar-brand' do %>
             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
             PoliceConnect
@@ -45,6 +50,7 @@
             <li class="nav-item"><%= link_to "Sign in", new_user_session_path, method: :get, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, method: :get, class: "nav-link" %></li>
           </ul>
+        <% end %>
       </div>
 
     </div>
