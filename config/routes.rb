@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   get '/vision_mission_core_values', to: 'pages#vision_mission_core_values'
   get 'dashboard', to: 'dashboard#show', as: :dashboard
 
-  devise_scope :user do
-    get 'profile', to: 'users/registrations#new_profile'
-    post 'profile', to: 'users/registrations#create_profile'
-  end
 
-  resource :profile, only: [:show, :update]
-  patch 'profile', to: 'profiles#update'
+  devise_scope :user do
+
+    resource :profile, only: [:show, :update]
+    patch 'profile', to: 'profiles#update'
+  end
 
 
   
