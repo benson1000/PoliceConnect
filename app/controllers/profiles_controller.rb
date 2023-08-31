@@ -2,15 +2,16 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user = current_user
+    @profile = current_user.profile
   end
 
   def update
-    @user = current_user
-    if @user.update(profile_params)
+    @profile = current_user.profile
+    if @profile.update(profile_params)
       flash[:success] = 'Profile updated successfully.'
       redirect_to dashboard_path
     else
+      flash[:danger] = "There is an error in your profile data."
       render :show
     end
   end
@@ -18,6 +19,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:first_name, :last_name, :phone_number, :national_id)
+    params.require(:profile).permit(:first_name, :last_name, :phone_number, :national_id)
   end
 end

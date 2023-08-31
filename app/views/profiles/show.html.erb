@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h1 class="display-3 text-align-center"><strong>Contact Information</strong></h1>
-  <%= form_for @user, url: profile_path, method: :patch do |f| %>
+  <%= form_for @profile, url: profile_path do |f| %>
     <div class="row g-3">
       <div class="col-md-6">
         <%= f.label :first_name, "First Name" %>

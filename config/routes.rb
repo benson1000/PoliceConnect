@@ -5,17 +5,12 @@ Rails.application.routes.draw do
   get '/background', to: 'pages#background'
   resources :contacts
   get '/vision_mission_core_values', to: 'pages#vision_mission_core_values'
-  get 'dashboard', to: 'dashboard#show', as: :dashboard
+  get 'dashboard', to: 'dashboards#show', as: :dashboard
 
 
-  devise_scope :user do
+  # ...
+  resource :profile, only: [:show, :update]
 
-    resource :profile, only: [:show, :update]
-    patch 'profile', to: 'profiles#update'
-  end
-
-
-  
   root to: 'pages#home'
 
 end
