@@ -1,5 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+  
+  def edit
+    @profile = current_user.profile
+  end
 
   def show
     @profile = current_user.profile
@@ -12,7 +16,7 @@ class ProfilesController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:danger] = "There is an error in your profile data."
-      render :show
+      redirect_to edit_profile_path
     end
   end
 

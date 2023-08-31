@@ -1,44 +1,6 @@
 <div class="container-fluid">
-  <h1 class="display-3 text-align-center"><strong>Contact Information</strong></h1>
-  <%= form_for @profile, url: profile_path do |f| %>
-    <div class="row g-3">
-      <div class="col-md-6">
-        <%= f.label :first_name, "First Name" %>
-        <%= f.text_field :first_name, class: "form-control" %>
-      </div>
-      <br />
-      <div class="col-md-6">
-        <%= f.label :last_name, "Last Name" %>
-        <%= f.text_field :last_name, class: "form-control" %>
-      </div>
-    </div>
-    <br />
-    <div class="row g-3">
-      <div class="col-md-6">
-        <%= f.label :phone_number, "Phone Number" %>
-        <%= f.text_field :phone_number, class: "form-control" %>
-      </div>
-      <br />
-      <div class="col-md-6">
-        <%= f.label :national_id, "ID Number", class: "form-label" %>
-        <%= f.text_field :national_id, class: "form-control" %>
-      </div>
-    </div>
-    <br />
-
-    <div class="row g-3">
-      <div class="col-md-6">
-        <%= f.label :email, "Email" %>
-        <%= f.email_field :email, disabled: true, class: "form-control" %>
-      </div>    
-    </div>
-    <br />
-
-    <div class="col-12">
-      <%= f.submit "Save Profile", class: 'btn btn-primary' %>
-    </div>
-    <br />
+  <h1>Your Profile</h1>
 
 
-  <% end %>
+  <%= link_to "Edit Profile", edit_profile_path %>
 </div>
