@@ -5,13 +5,9 @@ Rails.application.routes.draw do
   get '/background', to: 'pages#background'
   resources :contacts
   get '/vision_mission_core_values', to: 'pages#vision_mission_core_values'
-  get 'dashboard', to: 'dashboards#show', as: :dashboard
+  get 'dashboard', to: 'dashboard#show', as: :dashboard
 
-  get '/profile', to: 'profiles#show'
-   # Define routes for editing and updating profiles
-  devise_scope :user do
-    resource :profile, only: [:edit, :update] # Singular resource for profile
-  end
+  resource :profile, only: [:show, :update, :edit]
 
   root to: 'pages#home'
 

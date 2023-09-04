@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h1 style="display-2"><strong>Contact Information</strong></h1>
+
+  <% if session[:update_profile_message] %>
+    <div class="alert alert-danger" role="alert">
+      <%= session[:update_profile_message] %>
+    </div>
+  <% end %>
+
+  <% if @profile %>
+    <p>Name: <%= "#{@profile.first_name} #{@profile.last_name}" %></p>
+    <p>Email: <%= current_user.email %></p>
+    <p>Phone Number: <%= @profile.phone_number %></p>
+    <p>National ID: <%= @profile.national_id %></p>
+  <% else %>
+    <div class="alert alert-danger" role="alert">
+      Your profile information is incomplete. Please <%= link_to 'update your profile', edit_profile_path, class: 'alert-link' %>.
+    </div>
+  <% end %>
+</div>

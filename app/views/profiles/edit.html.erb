@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h1 class="display-3 text-align-center"><strong>Update Profile</strong></h1>
-  <%= form_for @profile, url: edit_profile_path,  method: :patch do |f| %>
+  <%= form_for @profile, url: profile_path,  method: :patch do |f| %>
     <div class="row g-3">
       <div class="col-md-6">
         <%= f.label :first_name, "First Name" %>
@@ -29,7 +29,7 @@
     <div class="row g-3">
       <div class="col-md-6">
         <%= f.label :email, "Email" %>
-        <%= f.email_field :email, disabled: true, class: "form-control" %>
+        <%= f.email_field :email, value: @user.email, disabled: true,class: "form-control" %>
       </div>    
     </div>
     <br />

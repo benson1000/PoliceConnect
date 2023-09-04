@@ -1,6 +1,13 @@
 <div class="container-fluid">
-  <h1>Your Profile</h1>
+  <h1 class="display-3 text-align-center"><strong>Contact Information</strong></h1>
 
+  <!-- Add a link to edit the profile -->
+  <%= link_to "Edit Profile", edit_profile_path(current_user.profile), class: "btn btn-primary" %>
 
-  <%= link_to "Edit Profile", edit_profile_path %>
+  <!-- Display profile information -->
+  <p><strong>First Name:</strong> <%= @profile.first_name %></p>
+  <p><strong>Last Name:</strong> <%= @profile.last_name %></p>
+  <p><strong>Phone Number:</strong> <%= @profile.phone_number %></p>
+  <p><strong>National ID:</strong> <%= @profile.national_id %></p>
 </div>
+

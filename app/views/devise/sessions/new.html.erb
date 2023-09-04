@@ -11,7 +11,12 @@
 
         <div class="field form-group">
           <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', id: 'password' %>
+        </div>
+
+        <div class="form-check form-group">
+          <input type="checkbox" class="form-check-input" id="show-password">
+          <label class="form-check-label" for="show-password">Show Password</label>
         </div>
 
         <% if devise_mapping.rememberable? %>
@@ -34,3 +39,19 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const passwordField = document.getElementById("password");
+    const showPasswordCheckbox = document.getElementById("show-password");
+
+    showPasswordCheckbox.addEventListener("change", function () {
+      if (showPasswordCheckbox.checked) {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    });
+  });
+</script>
+
