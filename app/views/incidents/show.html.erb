@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <h2>Incident Details</h2>
+
+  <p><strong>Title:</strong> <%= @incident.title %></p>
+  <p><strong>Description:</strong> <%= @incident.description %></p>
+  <p><strong>Location:</strong> <%= @incident.location %></p>
+
+  <!-- Display media here (e.g., image or video) -->
+
+  <%= link_to 'Edit', edit_incident_path(@incident), class: 'btn btn-primary' %>
+  <%= link_to 'Back', incidents_path, class: 'btn btn-secondary' %>
+</div>

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <h2>Incident List</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Location</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @incidents.each do |incident| %>
+        <tr>
+          <td><%= incident.title %></td>
+          <td><%= incident.description %></td>
+          <td><%= incident.location %></td>
+          <td>
+            <%= link_to 'Show', incident %>
+            <%= link_to 'Edit', edit_incident_path(incident) %>
+            <%= link_to 'Destroy', incident, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'New Incident', new_incident_path, class: 'btn btn-primary' %>
+</div>

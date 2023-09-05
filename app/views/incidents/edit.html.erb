@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <h2>Edit Incident</h2>
+
+  <%= form_for @incident, url: incident_path(@incident), method: :patch, html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, class: "form-control", required: true %>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_area :description, class: "form-control", required: true %>
+    </div>
+
+    <!-- Location -->
+    <div class="form-group">
+      <%= f.label :location, "Location" %>
+      <%= f.text_field :location, class: "form-control", required: true %>
+    </div>
+
+    <!-- Media (File Upload) -->
+    <div class="form-group">
+      <%= f.label :media, "Media (Image or Video)" %>
+      <%= f.file_field :media, class: "form-control-file" %>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
