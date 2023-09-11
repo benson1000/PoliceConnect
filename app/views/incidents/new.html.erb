@@ -11,7 +11,8 @@
     <!-- Description -->
     <div class="form-group">
       <%= f.label :description, "Description" %>
-      <%= f.text_area :description, class: "form-control", required: true %>
+      <%= f.text_area :description, class: "form-control", required: true, id: "description-textarea" %>
+      <small><span id="word-count">0</span>/1000 words</small>
     </div>
 
     <!-- Location -->
@@ -32,3 +33,21 @@
     </div>
   <% end %>
 </div>
+<script>
+  const descriptionTextarea = document.getElementById("description-textarea");
+  const wordCount = document.getElementById("word-count");
+
+  descriptionTextarea.addEventListener("input", function() {
+    const text = this.value;
+    const words = text.trim().split(/\s+/);
+    const wordCountValue = words.length;
+
+    if (wordCountValue <= 1000) {
+      wordCount.textContent = wordCountValue + "/1000 words";
+    } else {
+      // If the word limit is exceeded, prevent further input
+      this.value = text.substring(0, text.lastIndexOf(" ", 1000)) + " ";
+      wordCount.textContent = "1000/1000 words";
+    }
+  });
+</script>

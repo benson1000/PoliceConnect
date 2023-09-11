@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#show', as: :dashboard
 
   resource :profile, only: [:show, :update, :edit]
+  get 'user_incidents', to: 'incidents#user_incidents'
 
   root to: 'pages#home'
 

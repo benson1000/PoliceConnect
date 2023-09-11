@@ -16,8 +16,13 @@ class IncidentsController < ApplicationController
     @incident = Incident.new
   end
 
-  # GET /incidents/1/edit
   def edit
+    @incident = Incident.find(params[:id])
+  end
+
+  def user_incidents
+    @user = current_user
+    @incidents = @user.incidents
   end
 
   # POST /incidents

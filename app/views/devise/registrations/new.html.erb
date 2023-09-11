@@ -1,3 +1,10 @@
+   <style>
+        form i {
+            margin-left: 0px;
+            cursor: pointer;
+        }
+    </style>
+
 <div class="row padding" style="justify-content: center;">
   <div class="col-md-4 mb-3">
     <div class="well">
@@ -21,17 +28,14 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'user_password' %>
+          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', name: 'password', id: 'password' %>
+          <i class="bi bi-eye-slash" id="togglePassword"></i>
         </div>
 
         <div class="field form-group">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control', id: 'user_password_confirmation' %>
-        </div>
-
-        <div class="form-check form-group">
-          <input type="checkbox" class="form-check-input" id="show-password">
-          <label class="form-check-label" for="show-password">Show Password</label>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control', id: 'password', name: 'password' %>
+          <i class="bi bi-eye-slash" id="togglePassword"></i>
         </div>
 
         <div class="actions form-group">
@@ -47,19 +51,17 @@
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const passwordField = document.getElementById("user_password");
-    const confirmPasswordField = document.getElementById("user_password_confirmation");
-    const showPasswordCheckbox = document.getElementById("show-password");
+  // Select the togglePassword and password elements by their IDs
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
 
-    showPasswordCheckbox.addEventListener("change", function () {
-      if (showPasswordCheckbox.checked) {
-        passwordField.type = "text";
-        confirmPasswordField.type = "text";
-      } else {
-        passwordField.type = "password";
-        confirmPasswordField.type = "password";
-      }
-    });
+  // Add a click event listener to the togglePassword element
+  togglePassword.addEventListener('click', () => {
+    // Toggle the type attribute of the password input field
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+
+    // Toggle the eye and bi-eye icon by toggling the class
+    this.classList.toggle('bi-eye');
   });
 </script>

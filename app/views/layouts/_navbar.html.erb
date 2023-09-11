@@ -34,7 +34,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Incidents</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
                   <a class="dropdown-item"><%= link_to "Report an Incident", new_incident_path %></a>
-                  <% if @incident && !@incident.new_record? %>
+                  <a class="dropdown-item"><%= link_to "Your Reported Incidents", user_incidents_path %></a>
+                 <% if @incident && !@incident.new_record? %>
                     <a class="dropdown-item"><%= link_to "Edit an Incident", edit_incident_path(@incident) %></a> 
                   <% end %>
                 </div>
